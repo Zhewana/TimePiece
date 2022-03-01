@@ -16,6 +16,10 @@
 #define TaskListNumMAX 10
 
 #define TaskHandlerDeclare(__handlerID) Task##__handlerID##Handler
+#define INIT_TASK(_taskID, _taskHandler, _taskTimePiece)     \
+    {                                                        \
+        _taskID, 0, 0, 0, 0, _taskTimePiece, _taskHandler, 0 \
+    }
 
 static uint16_t ITperiod = 1;
 static uint32_t globalTimer = 0;
